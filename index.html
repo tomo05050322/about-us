@@ -3,7 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>レインボーの会｜ボランティア防犯活動</title>
+
+<!-- 検索結果に表示されるタイトル（30文字前後） -->
+<title>レインボーの会 | 徳島文理大学 ボランティアサークル【反射板ワークショップ】</title>
+
+<!-- 検索結果の説明文（80〜100文字程度） -->
+<meta name="description" content="徳島文理大学のボランティアサークル『レインボーの会』公式サイト。100均素材で作る安全・安価な反射板ワークショップの作り方、型紙データ、地域防犯・交通安全活動の取り組みを公開しています。">
+
+<!-- キーワード設定 -->
+<meta name="keywords" content="レインボーの会,徳島文理大学,反射板,ワークショップ,作り方,防犯,高松市,ボランティアサークル">
+
+<!-- SNSでシェアされた時の表示設定（OGP） -->
+<meta property="og:title" content="レインボーの会 | 徳島文理大学">
+<meta property="og:description" content="100均素材で作る安全な反射板の作り方を無料公開中！">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tomo05050322.github.io/web/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -456,6 +471,165 @@
   }
   .partner .p-dot{width:8px;height:8px;border-radius:50%;background:var(--indigo);flex-shrink:0;}
 
+  /* ===== Reflector Workshop ===== */
+  .reflector-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:48px;
+    margin-bottom:40px;
+  }
+  .reflector-grid p{color:var(--ink-soft);font-size:15.5px;}
+  .reflector-grid p + p{margin-top:14px;}
+  .reflector-points{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .reflector-points h3{font-size:13px;letter-spacing:0.06em;color:var(--ink-soft);font-weight:600;margin-bottom:2px;font-family:'Noto Sans JP',sans-serif;}
+  .reflector-point{
+    display:flex;
+    gap:10px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.7;
+  }
+  .reflector-point .check{
+    flex-shrink:0;
+    width:18px;height:18px;
+    border-radius:50%;
+    background:var(--indigo-soft);
+    color:var(--indigo);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;
+    font-weight:700;
+    margin-top:1px;
+  }
+  .reflector-point b{color:var(--ink);font-weight:600;}
+
+  .subhead{
+    font-size:19px;
+    font-weight:700;
+    margin:0 0 16px;
+  }
+  .material-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px 26px;
+    margin-bottom:40px;
+  }
+  .material-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:10px 24px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .material-list li{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    font-size:14px;
+    color:var(--ink-soft);
+    padding:8px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .material-list li::before{
+    content:"";
+    width:6px;height:6px;
+    border-radius:50%;
+    background:var(--terracotta);
+    flex-shrink:0;
+    transform:translateY(-2px);
+  }
+  .material-list li b{color:var(--ink);font-weight:600;}
+
+  .steps-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:40px;
+  }
+  .step-card{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px 24px;
+    display:grid;
+    grid-template-columns:40px 1fr;
+    gap:18px;
+  }
+  .step-num{
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--indigo);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    flex-shrink:0;
+  }
+  .step-card h4{font-size:15.5px;font-weight:700;margin-bottom:6px;}
+  .step-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin:0;}
+  .photo-slot{
+    margin-top:14px;
+    border:1px dashed var(--line);
+    border-radius:var(--radius);
+    background:var(--bg);
+    padding:22px 16px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    color:var(--ink-faint);
+    text-align:center;
+  }
+  .photo-slot svg{width:24px;height:24px;opacity:0.55;}
+  .photo-slot span{font-size:11.5px;letter-spacing:0.02em;}
+
+  .announce-card{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:30px 30px 28px;
+    overflow:hidden;
+  }
+  .announce-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:4px;
+    background:var(--stripe);
+  }
+  .announce-card h4{
+    font-size:20px;
+    font-weight:700;
+    margin:10px 0 10px;
+  }
+  .announce-card p{font-size:14.5px;color:var(--ink-soft);max-width:56ch;margin:0;}
+  .announce-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+  .announce-meta div{font-size:13px;color:var(--ink-soft);}
+  .announce-meta div b{display:block;color:var(--ink);font-size:14.5px;font-weight:700;margin-top:2px;}
+
   /* ===== Contact ===== */
   .contact-lead{
     color:var(--ink-soft);
@@ -535,6 +709,8 @@
   @media (max-width:820px){
     .hero-grid{grid-template-columns:1fr;gap:32px;}
     .about-grid{grid-template-columns:1fr;}
+    .reflector-grid{grid-template-columns:1fr;}
+    .step-card{grid-template-columns:36px 1fr;}
     .timeline-year{grid-template-columns:1fr;}
     .year-label{position:static;display:flex;align-items:baseline;gap:10px;margin-bottom:14px;}
     .year-label span{margin-top:0;}
@@ -571,8 +747,9 @@
     <div class="brand"><span class="brand-mark"></span>レインボーの会</div>
     <nav class="navlinks" id="navlinks">
       <a href="#about">会について</a>
+      <a href="#reflector">反射板ワークショップ</a>
       <a href="#timeline">活動記録</a>
-      <a href="#partners">活動協力</a>
+      <a href="#partners">連携団体</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
     <div class="theme-toggle">
@@ -638,6 +815,117 @@
           <div class="legend-item"><span class="dot fraud"></span>特殊詐欺被害防止キャンペーン</div>
           <div class="legend-item"><span class="dot event"></span>地域交流イベント・ブース</div>
           <div class="legend-item"><span class="dot award"></span>研修・贈呈式・表彰</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFLECTOR WORKSHOP -->
+  <section id="reflector">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">NEW INITIATIVE</div>
+          <h2>安全・安価な防犯反射板の取り組み</h2>
+        </div>
+        <p>薄暗い時間帯の登下校や外出時に、光る「反射板」でひと目を守る新しい活動です。</p>
+      </div>
+
+      <div class="reflector-grid">
+        <div class="reveal">
+          <p>日没が早まる季節、車のライトに反射して存在を知らせる「反射板」は、子どもも高齢者も夜道での事故や不審者との遭遇を防ぐ、身近で確実な備えのひとつです。レインボーの会では、材料費を抑えながら誰でも安全に作れるよう、100円ショップで手に入る<b>EVAマット</b>を使った手作りワークショップを新たにスタートしました。</p>
+          <p>特別な工具を使わず、はさみとカッターだけで加工できるため、小さなお子さんから保護者、地域の方まで一緒に参加できるのが特長です。作った反射板はランドセルやバッグに取り付けて、そのまま日々の見守り活動にも活用できます。</p>
+        </div>
+        <div class="reflector-points reveal">
+          <h3>EVAマットを選ぶ理由</h3>
+          <div class="reflector-point"><span class="check">✓</span><span><b>安全に扱える</b>：やわらかく角が丸いため、小さな子どもがはさみで切っても怪我をしにくい素材です。</span></div>
+          <div class="reflector-point"><span class="check">✓</span><span><b>安価で継続しやすい</b>：100円ショップで数十個単位でも調達でき、ボランティア予算内で継続開催が可能です。</span></div>
+          <div class="reflector-point"><span class="check">✓</span><span><b>加工がかんたん</b>：軽量・弾力性があり、特別な工具なしでカット・接着ができます。</span></div>
+          <div class="reflector-point"><span class="check">✓</span><span><b>屋外使用に強い</b>：耐水性があり型崩れしにくく、ランドセルやバッグに付けたままでも長く使えます。</span></div>
+        </div>
+      </div>
+
+      <h3 class="subhead reveal">材料リスト</h3>
+      <div class="material-card reveal">
+        <ul class="material-list">
+          <li><b>EVAマット</b>（100円ショップ／2色以上）</li>
+          <li><b>反射シート・反射テープ</b>（100円ショップ・手芸店）</li>
+          <li><b>両面テープ</b>（または木工用ボンド）</li>
+          <li><b>はさみ・カッター</b></li>
+          <li><b>キリまたはパンチ</b>（穴あけ用）</li>
+          <li><b>丸ひも・Sカン</b>（バッグへの取り付け用）</li>
+          <li><b>型紙</b>（星・しずく・丸などシンプルな形）</li>
+          <li><b>下敷き・カッターマット</b>（安全な作業用）</li>
+        </ul>
+      </div>
+
+      <h3 class="subhead reveal">作り方ステップ</h3>
+      <div class="steps-list">
+        <div class="step-card reveal">
+          <div class="step-num">1</div>
+          <div>
+            <h4>型紙を写す</h4>
+            <p>EVAマットの上に好きな形の型紙をあて、鉛筆やペンで下書きします。星やしずくなど、シンプルな形がおすすめです。</p>
+            <div class="photo-slot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg>
+              <span>写真準備中：型紙を写す様子</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">2</div>
+          <div>
+            <h4>カットする</h4>
+            <p>下書きに沿ってカッターやはさみで丁寧に切り抜きます。お子さんが作業する際は、保護者やスタッフが必ず付き添います。</p>
+            <div class="photo-slot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg>
+              <span>写真準備中：カット作業の様子</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">3</div>
+          <div>
+            <h4>反射材を貼る</h4>
+            <p>反射シートを型に合わせてカットし、両面テープでEVAマットにしっかり貼り付けます。</p>
+            <div class="photo-slot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg>
+              <span>写真準備中：反射材を貼る様子</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">4</div>
+          <div>
+            <h4>穴をあけて仕上げる</h4>
+            <p>キリやパンチで小さな穴をあけ、丸ひもやSカンを通して、ランドセルやバッグに取り付けられるように仕上げます。</p>
+            <div class="photo-slot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg>
+              <span>写真準備中：仕上げの様子</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">5</div>
+          <div>
+            <h4>完成・配布</h4>
+            <p>完成した反射板は、登下校時の見守り活動やイベント会場で希望者に配布し、そのまま日常の安全対策として使ってもらいます。</p>
+            <div class="photo-slot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg>
+              <span>写真準備中：完成品と配布の様子</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="announce-card reveal">
+        <div class="eyebrow">EVENT</div>
+        <h4>12月 イオンモール高松にてワークショップを実施予定</h4>
+        <p>今回ご紹介した手作り防犯反射板ワークショップを、12月にイオンモール高松にて開催します。小学生を中心に、保護者の方もお子さんと一緒にご参加いただけます。詳しい日時・参加方法は決まり次第、当ページでお知らせします。</p>
+        <div class="announce-meta">
+          <div>開催時期<b>2026年12月（詳細日時は調整中）</b></div>
+          <div>会場<b>イオンモール高松</b></div>
+          <div>対象<b>小学生とその保護者（参加無料）</b></div>
         </div>
       </div>
     </div>
@@ -901,7 +1189,7 @@
       <div class="section-head reveal">
         <div>
           <div class="eyebrow">PARTNERS</div>
-          <h2>活動協力</h2>
+          <h2>連携団体</h2>
         </div>
         <p>行政・警察・学校・大学など、多くの団体と協力しながら活動しています。</p>
       </div>
@@ -930,8 +1218,7 @@
         </div>
       </div>
       <p class="contact-lead">
-        当サークルへの活動へのご参加・ご協力、取材や連携のご相談などに関するお問い合わせは、<a href="https://www.bunri-u.ac.jp/about/social/request-stu.html" target="_blank" rel="noopener noreferrer">地域との交流学生クラブ・サークル出演及びボランティア活動依頼</a>
-にて一括して受け付けております。
+        当サークルへの活動へのご参加・ご協力、取材や連携のご相談などに関するお問い合わせは、大学の公式窓口である<b>徳島文理大学 高松駅キャンパス 学生支援課</b>にて一括して受け付けております。
       </p>
       <div class="contact-card">
         <div class="contact-card-label">お問い合わせ窓口</div>
