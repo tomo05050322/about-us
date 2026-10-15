@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head><!-- Google tag (gtag.js) -->
+<head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7B0GN20D8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -11,7 +12,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ 
 <!-- 検索結果に表示されるタイトル（30文字前後） -->
 <title>レインボーの会 | 徳島文理大学 ボランティアサークル【反射板ワークショップ】</title>
  
@@ -77,8 +78,8 @@
   }
  
   *{box-sizing:border-box;}
-  :root{--header-h:68px;}
-  html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);}
+  :root{--header-h:68px;--breadcrumb-h:37px;}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + var(--breadcrumb-h));}
   section[id]{scroll-margin-top:-48px;}
   body{
     margin:0;
@@ -139,6 +140,36 @@
   html[data-theme="dark"] header{
     background:rgba(20,24,31,0.86);
   }
+ 
+  /* ===== Breadcrumb ===== */
+  .breadcrumb{
+    position:sticky;
+    top:var(--header-h);
+    z-index:40;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    transition:background-color .35s ease, border-color .35s ease;
+  }
+  .breadcrumb-inner{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 28px;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    color:var(--ink-faint);
+  }
+  .breadcrumb-inner a{
+    color:var(--ink-faint);
+    text-decoration:none;
+  }
+  .breadcrumb-inner a:hover, .breadcrumb-inner a:focus-visible{color:var(--indigo);}
+  .breadcrumb-sep{color:var(--line);}
+  #breadcrumbCurrent{color:var(--ink);font-weight:600;}
+  @media (max-width:520px){
+    .breadcrumb-inner{padding:9px 18px;font-size:12px;}
+  }
+ 
   .nav{
     display:flex;
     align-items:center;
@@ -374,13 +405,25 @@
   }
   .year-label{
     position:sticky;
-    top:calc(var(--header-h) + 10px);
+    top:calc(var(--header-h) + var(--breadcrumb-h) + 10px);
     align-self:start;
     font-family:'Zen Maru Gothic', sans-serif;
     font-size:30px;
     font-weight:900;
     color:var(--indigo);
     padding-top:6px;
+  }
+  .year-label .latest-badge{
+    display:inline-block;
+    margin-top:8px;
+    padding:2px 9px;
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--teal);
+    border:1px solid var(--teal);
+    border-radius:var(--radius);
   }
   .year-label span{
     display:block;
@@ -978,6 +1021,14 @@
   </div>
 </header>
  
+<nav class="breadcrumb" id="breadcrumb" aria-label="現在地">
+  <div class="wrap breadcrumb-inner">
+    <a href="#top">ホーム</a>
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span id="breadcrumbCurrent" aria-current="page"></span>
+  </div>
+</nav>
+ 
 <div class="stripe"></div>
  
 <main>
@@ -985,7 +1036,7 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">香川県高松市｜地域防犯ボランティア</div>
+        <div class="eyebrow">香川県さぬき市｜地域防犯ボランティア</div>
         <h1>子どもも、<span class="nowrap">高齢者も、</span><br>まちごと見守る<span class="accent">虹</span>になる。</h1>
         <p class="lead">レインボーの会は、登下校の見守りから特殊詐欺被害防止まで、警察・学校・学生と手を取り合いながら地域の安全・安心を支えるボランティアサークルです。</p>
       </div>
@@ -993,7 +1044,7 @@
         <div class="num">平成17年 4月1日</div>
         <div class="cap">レインボーの会 設立</div>
         <div class="div"></div>
-        <div class="row"><span>活動地域</span><b>高松市・さぬき市 ほか香川県内</b></div>
+        <div class="row"><span>活動地域</span><b>さぬき市・高松市 ほか香川県内</b></div>
         <div class="row"><span>主な活動</span><b>見守り・パトロール・啓発活動</b></div>
         <div class="row"><span>連携先</span><b>香川県警察・大学・行政</b></div>
         <div class="div"></div>
@@ -1017,7 +1068,7 @@
       </div>
       <div class="about-grid">
         <div class="reveal">
-          <p>レインボーの会は平成17年（2005年）4月1日に設立された、香川県高松市を拠点とするボランティアサークルです。会の名前には、子ども・高齢者・学生・警察など、立場の異なる人々が色とりどりの帯のようにつながり、地域を見守るという願いが込められています。</p>
+          <p>レインボーの会は平成17年（2005年）4月1日に設立された、香川県さぬき市を拠点とするボランティアサークルです。会の名前には、子ども・高齢者・学生・警察など、立場の異なる人々が色とりどりの帯のようにつながり、地域を見守るという願いが込められています。</p>
           <p>設立以来、志度小学校をはじめとする児童の登下校時の見守り活動を中心に、特殊詐欺被害防止の啓発キャンペーン、年末年始の特別警戒パトロール、地域のお祭りでの防犯ブース運営など、香川県・香川県警察や近隣大学と連携しながら幅広い防犯活動に取り組んできました。</p>
           <p>令和2年度には香川県防犯活動自主企画提案事業として「地域との交流と協同による防犯活動」を実施するなど、行政と協働した取り組みも継続的に行っています。</p>
         </div>
@@ -1195,188 +1246,12 @@
           <div class="eyebrow">ACTIVITY LOG</div>
           <h2>活動記録</h2>
         </div>
-        <p>2020年から現在まで、実施してきた主な活動を年ごとにまとめています。</p>
-      </div>
- 
-      <!-- 2020 -->
-      <div class="timeline-year">
-        <div class="year-label reveal">2020<span>令和2年</span></div>
-        <div class="year-items">
-          <div class="tcard watch reveal">
-            <div class="date">2020年10月9日（金）</div>
-            <h4>「安全・安心まちづくり旬間」全国地域安全運動 パトロール出発式</h4>
-            <div class="place">香川県庁</div>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2020年10月13日（火）14:40〜</div>
-            <h4>見守り隊出発式</h4>
-            <div class="place">志度小学校 付近</div>
-            <div class="desc">令和2年度香川県防犯活動自主企画提案事業「地域との交流と協同による防犯活動」の一環。志度小学校児童の登下校時の見守りを目的とした出発式を実施し、式終了後は児童の下校時に合わせて見守り活動を行った。</div>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2020年12月10日（木）</div>
-            <h4>年末年始の特別警戒・交通死亡事故抑止活動出発式／街頭交通監視</h4>
-            <div class="place">香川県警察本部</div>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard fraud reveal">
-            <div class="date">2020年12月20日（日）</div>
-            <h4>年末年始特別警戒「讃岐33（燦々）作戦」犯罪防止・防犯キャンペーン</h4>
-            <div class="place">フジ志度店 前</div>
-            <span class="tag">特殊詐欺被害防止</span>
-          </div>
-        </div>
-      </div>
- 
-      <!-- 2021 -->
-      <div class="timeline-year">
-        <div class="year-label reveal">2021<span>令和3年</span></div>
-        <div class="year-items">
-          <div class="tcard award reveal">
-            <div class="date">2021年1月8日（金）</div>
-            <h4>「源内警部」の防犯アイテム贈呈式</h4>
-            <div class="place">さぬき市役所</div>
-            <span class="tag">研修・贈呈式</span>
-          </div>
-          <div class="tcard event reveal">
-            <div class="date">2021年10月11日（月）</div>
-            <h4>全国地域安全運動 自転車盗難被害防止キャンペーン（鍵かけキャンペーン）</h4>
-            <div class="place">正門駐輪場</div>
-            <span class="tag">地域交流イベント</span>
-          </div>
-          <div class="tcard event reveal">
-            <div class="date">2021年11月27日（土）</div>
-            <h4>さぬき警察署との児童虐待防止 啓発キャンペーン</h4>
-            <div class="place">ザ・ビッグ寒川店</div>
-            <span class="tag">地域交流イベント</span>
-          </div>
-          <div class="tcard fraud reveal">
-            <div class="date">2021年12月15日（水）</div>
-            <h4>香川県・香川県警察合同 特殊詐欺被害防止キャンペーン</h4>
-            <div class="place">高松市丸亀町壱番街前ドーム</div>
-            <span class="tag">特殊詐欺被害防止</span>
-          </div>
-        </div>
-      </div>
- 
-      <!-- 2022 -->
-      <div class="timeline-year">
-        <div class="year-label reveal">2022<span>令和4年</span></div>
-        <div class="year-items">
-          <div class="tcard fraud reveal">
-            <div class="date">2022年6月4日（土）12:30〜</div>
-            <h4>特殊詐欺防止 Twitter用動画 制作</h4>
-            <div class="place">さぬき警察署（署長室・訓示室）</div>
-            <span class="tag">特殊詐欺被害防止</span>
-          </div>
-          <div class="tcard award reveal">
-            <div class="date">2022年8月2日（火）</div>
-            <h4>防犯（特殊詐欺Twitter用）動画制作に対する感謝状贈呈式</h4>
-            <span class="tag">研修・贈呈式</span>
-          </div>
-          <div class="tcard event reveal">
-            <div class="date">2022年10月16日（日）</div>
-            <h4>高松秋のまつり 仏生山大名行列 ブース開設</h4>
-            <div class="desc">
-              実施内容
-              <ul>
-                <li>特殊詐欺被害防止メッセージ入りカード作り（子どもを撮影した写真を使い、祖父母へのメッセージカードを作成。希望者は子ども用制服を着用して撮影可）</li>
-                <li>防犯ガラス割り体験（通常のガラスと防犯ガラスを実際に割って比較）</li>
-                <li>インターネット安全利用に関するクイズ</li>
-              </ul>
-              上記イベントの運営・補助を担当。
-            </div>
-            <span class="tag">地域交流イベント</span>
-          </div>
-          <div class="tcard fraud reveal">
-            <div class="date">2022年12月14日（水）</div>
-            <h4>香川県・香川県警察合同 特殊詐欺被害防止キャンペーン（徳島文理ヤンボラ）</h4>
-            <span class="tag">特殊詐欺被害防止</span>
-          </div>
-        </div>
-      </div>
- 
-      <!-- 2023 -->
-      <div class="timeline-year">
-        <div class="year-label reveal">2023<span>令和5年</span></div>
-        <div class="year-items">
-          <div class="tcard fraud reveal">
-            <div class="date">2023年12月14日（木）</div>
-            <h4>香川県・香川県警察合同 特殊詐欺被害防止キャンペーン（徳島文理ヤンボラ）</h4>
-            <span class="tag">特殊詐欺被害防止</span>
-          </div>
-        </div>
-      </div>
- 
-      <!-- 2024 -->
-      <div class="timeline-year">
-        <div class="year-label reveal">2024<span>令和6年</span></div>
-        <div class="year-items">
-          <div class="tcard fraud reveal">
-            <div class="date">2024年12月13日（金）</div>
-            <h4>香川県・香川県警察合同 特殊詐欺被害防止キャンペーン（徳島文理ヤンボラ）</h4>
-            <span class="tag">特殊詐欺被害防止</span>
-          </div>
-        </div>
-      </div>
- 
-      <!-- 2025 -->
-      <div class="timeline-year">
-        <div class="year-label reveal">2025<span>令和7年</span></div>
-        <div class="year-items">
-          <div class="tcard award reveal">
-            <div class="date">2025年6月28日（土）</div>
-            <h4>学生防犯ボランティア育成・研修会</h4>
-            <span class="tag">研修・贈呈式</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2025年6月28日（土）</div>
-            <h4>改正風適法施行に伴う犯罪抑止に向けた繁華街パトロール</h4>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2025年7月2日（水）</div>
-            <h4>JR高松駅における テロ対策キャンペーン</h4>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2025年7月7日（月）</div>
-            <h4>徳島文理大学レインボーの会×香川大学防犯パトロール隊 防犯ボランティア共同プロジェクト出発式</h4>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2025年9月27日（土）</div>
-            <h4>徳島文理大学レインボーの会×香川大学防犯パトロール隊 共同プロジェクト活動</h4>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2025年10月27日（月）</div>
-            <h4>防犯パトロール</h4>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2025年11月10日（月）</div>
-            <h4>防犯パトロール</h4>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-          <div class="tcard fraud reveal">
-            <div class="date">2025年12月12日（金）</div>
-            <h4>香川県・香川県警察合同による特殊詐欺等被害防止キャンペーン</h4>
-            <span class="tag">特殊詐欺被害防止</span>
-          </div>
-          <div class="tcard watch reveal">
-            <div class="date">2025年12月22日（月）</div>
-            <h4>防犯パトロール</h4>
-            <span class="tag">見守り・パトロール</span>
-          </div>
-        </div>
+        <p>直近の2026年度から2020年の設立初期まで、実施してきた主な活動を新しい順にまとめています。</p>
       </div>
  
       <!-- 2026 -->
       <div class="timeline-year">
-        <div class="year-label reveal">2026<span>令和8年</span></div>
+        <div class="year-label reveal">2026<span>令和8年</span><span class="latest-badge">最新</span></div>
         <div class="year-items">
           <div class="tcard award reveal">
             <div class="date">2026年3月10日</div>
@@ -1432,6 +1307,176 @@
             <div class="date">2026年11月8日</div>
             <h4>志度祭 運営スタッフ</h4>
             <span class="tag">地域交流イベント</span>
+          </div>
+        </div>
+      </div>
+      <!-- 2025 -->
+      <div class="timeline-year">
+        <div class="year-label reveal">2025<span>令和7年</span></div>
+        <div class="year-items">
+          <div class="tcard award reveal">
+            <div class="date">2025年6月28日（土）</div>
+            <h4>学生防犯ボランティア育成・研修会</h4>
+            <span class="tag">研修・贈呈式</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2025年6月28日（土）</div>
+            <h4>改正風適法施行に伴う犯罪抑止に向けた繁華街パトロール</h4>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2025年7月2日（水）</div>
+            <h4>JR高松駅における テロ対策キャンペーン</h4>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2025年7月7日（月）</div>
+            <h4>徳島文理大学レインボーの会×香川大学防犯パトロール隊 防犯ボランティア共同プロジェクト出発式</h4>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2025年9月27日（土）</div>
+            <h4>徳島文理大学レインボーの会×香川大学防犯パトロール隊 共同プロジェクト活動</h4>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2025年10月27日（月）</div>
+            <h4>防犯パトロール</h4>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2025年11月10日（月）</div>
+            <h4>防犯パトロール</h4>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard fraud reveal">
+            <div class="date">2025年12月12日（金）</div>
+            <h4>香川県・香川県警察合同による特殊詐欺等被害防止キャンペーン</h4>
+            <span class="tag">特殊詐欺被害防止</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2025年12月22日（月）</div>
+            <h4>防犯パトロール</h4>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+        </div>
+      </div>
+      <!-- 2024 -->
+      <div class="timeline-year">
+        <div class="year-label reveal">2024<span>令和6年</span></div>
+        <div class="year-items">
+          <div class="tcard fraud reveal">
+            <div class="date">2024年12月13日（金）</div>
+            <h4>香川県・香川県警察合同 特殊詐欺被害防止キャンペーン（徳島文理ヤンボラ）</h4>
+            <span class="tag">特殊詐欺被害防止</span>
+          </div>
+        </div>
+      </div>
+      <!-- 2023 -->
+      <div class="timeline-year">
+        <div class="year-label reveal">2023<span>令和5年</span></div>
+        <div class="year-items">
+          <div class="tcard fraud reveal">
+            <div class="date">2023年12月14日（木）</div>
+            <h4>香川県・香川県警察合同 特殊詐欺被害防止キャンペーン（徳島文理ヤンボラ）</h4>
+            <span class="tag">特殊詐欺被害防止</span>
+          </div>
+        </div>
+      </div>
+      <!-- 2022 -->
+      <div class="timeline-year">
+        <div class="year-label reveal">2022<span>令和4年</span></div>
+        <div class="year-items">
+          <div class="tcard fraud reveal">
+            <div class="date">2022年6月4日（土）12:30〜</div>
+            <h4>特殊詐欺防止 Twitter用動画 制作</h4>
+            <div class="place">さぬき警察署（署長室・訓示室）</div>
+            <span class="tag">特殊詐欺被害防止</span>
+          </div>
+          <div class="tcard award reveal">
+            <div class="date">2022年8月2日（火）</div>
+            <h4>防犯（特殊詐欺Twitter用）動画制作に対する感謝状贈呈式</h4>
+            <span class="tag">研修・贈呈式</span>
+          </div>
+          <div class="tcard event reveal">
+            <div class="date">2022年10月16日（日）</div>
+            <h4>高松秋のまつり 仏生山大名行列 ブース開設</h4>
+            <div class="desc">
+              実施内容
+              <ul>
+                <li>特殊詐欺被害防止メッセージ入りカード作り（子どもを撮影した写真を使い、祖父母へのメッセージカードを作成。希望者は子ども用制服を着用して撮影可）</li>
+                <li>防犯ガラス割り体験（通常のガラスと防犯ガラスを実際に割って比較）</li>
+                <li>インターネット安全利用に関するクイズ</li>
+              </ul>
+              上記イベントの運営・補助を担当。
+            </div>
+            <span class="tag">地域交流イベント</span>
+          </div>
+          <div class="tcard fraud reveal">
+            <div class="date">2022年12月14日（水）</div>
+            <h4>香川県・香川県警察合同 特殊詐欺被害防止キャンペーン（徳島文理ヤンボラ）</h4>
+            <span class="tag">特殊詐欺被害防止</span>
+          </div>
+        </div>
+      </div>
+      <!-- 2021 -->
+      <div class="timeline-year">
+        <div class="year-label reveal">2021<span>令和3年</span></div>
+        <div class="year-items">
+          <div class="tcard award reveal">
+            <div class="date">2021年1月8日（金）</div>
+            <h4>「源内警部」の防犯アイテム贈呈式</h4>
+            <div class="place">さぬき市役所</div>
+            <span class="tag">研修・贈呈式</span>
+          </div>
+          <div class="tcard event reveal">
+            <div class="date">2021年10月11日（月）</div>
+            <h4>全国地域安全運動 自転車盗難被害防止キャンペーン（鍵かけキャンペーン）</h4>
+            <div class="place">正門駐輪場</div>
+            <span class="tag">地域交流イベント</span>
+          </div>
+          <div class="tcard event reveal">
+            <div class="date">2021年11月27日（土）</div>
+            <h4>さぬき警察署との児童虐待防止 啓発キャンペーン</h4>
+            <div class="place">ザ・ビッグ寒川店</div>
+            <span class="tag">地域交流イベント</span>
+          </div>
+          <div class="tcard fraud reveal">
+            <div class="date">2021年12月15日（水）</div>
+            <h4>香川県・香川県警察合同 特殊詐欺被害防止キャンペーン</h4>
+            <div class="place">高松市丸亀町壱番街前ドーム</div>
+            <span class="tag">特殊詐欺被害防止</span>
+          </div>
+        </div>
+      </div>
+      <!-- 2020 -->
+      <div class="timeline-year">
+        <div class="year-label reveal">2020<span>令和2年</span></div>
+        <div class="year-items">
+          <div class="tcard watch reveal">
+            <div class="date">2020年10月9日（金）</div>
+            <h4>「安全・安心まちづくり旬間」全国地域安全運動 パトロール出発式</h4>
+            <div class="place">香川県庁</div>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2020年10月13日（火）14:40〜</div>
+            <h4>見守り隊出発式</h4>
+            <div class="place">志度小学校 付近</div>
+            <div class="desc">令和2年度香川県防犯活動自主企画提案事業「地域との交流と協同による防犯活動」の一環。志度小学校児童の登下校時の見守りを目的とした出発式を実施し、式終了後は児童の下校時に合わせて見守り活動を行った。</div>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard watch reveal">
+            <div class="date">2020年12月10日（木）</div>
+            <h4>年末年始の特別警戒・交通死亡事故抑止活動出発式／街頭交通監視</h4>
+            <div class="place">香川県警察本部</div>
+            <span class="tag">見守り・パトロール</span>
+          </div>
+          <div class="tcard fraud reveal">
+            <div class="date">2020年12月20日（日）</div>
+            <h4>年末年始特別警戒「讃岐33（燦々）作戦」犯罪防止・防犯キャンペーン</h4>
+            <div class="place">フジ志度店 前</div>
+            <span class="tag">特殊詐欺被害防止</span>
           </div>
         </div>
       </div>
@@ -1503,7 +1548,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand"><span class="brand-mark"></span>レインボーの会</div>
-        <p class="footer-note" style="margin-top:10px;">香川県高松市を拠点に、平成17年から地域の見守り・防犯活動を続けるボランティアサークルです。</p>
+        <p class="footer-note" style="margin-top:10px;">香川県さぬき市を拠点に、平成17年から地域の見守り・防犯活動を続けるボランティアサークルです。</p>
       </div>
     </div>
     <div class="footer-meta">
@@ -1555,14 +1600,19 @@
     applyTheme(isDark ? 'light' : 'dark');
   });
  
-  // header height -> CSS variable (keeps anchor jumps aligned)
+  // header + breadcrumb height -> CSS variables (keeps anchor jumps aligned)
   const headerEl = document.querySelector('header');
+  const breadcrumbEl = document.getElementById('breadcrumb');
   function syncHeaderH(){
     document.documentElement.style.setProperty('--header-h', headerEl.getBoundingClientRect().height + 'px');
+    document.documentElement.style.setProperty('--breadcrumb-h', breadcrumbEl.getBoundingClientRect().height + 'px');
   }
   syncHeaderH();
   window.addEventListener('resize', syncHeaderH);
-  if ('ResizeObserver' in window) new ResizeObserver(syncHeaderH).observe(headerEl);
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(syncHeaderH).observe(headerEl);
+    new ResizeObserver(syncHeaderH).observe(breadcrumbEl);
+  }
  
   // mobile nav toggle
   const navtoggle = document.getElementById('navtoggle');
@@ -1582,17 +1632,23 @@
   });
   window.addEventListener('resize', () => { if (window.innerWidth > 820) setMenu(false); });
  
-  // highlight the section currently in view
+  // highlight the section currently in view + keep the breadcrumb in sync
   const spyLinks = [...navlinks.querySelectorAll('a[href^="#"]')];
   const spySections = spyLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const breadcrumbCurrent = document.getElementById('breadcrumbCurrent');
   function updateSpy(){
-    const line = headerEl.getBoundingClientRect().height + 80;
+    const line = headerEl.getBoundingClientRect().height + breadcrumbEl.getBoundingClientRect().height + 80;
     let current = null;
-    spySections.forEach(s => { if (s.getBoundingClientRect().top <= line) current = s.id; });
+    let currentLink = null;
+    spySections.forEach((s, i) => {
+      if (s.getBoundingClientRect().top <= line) { current = s.id; currentLink = spyLinks[i]; }
+    });
     spyLinks.forEach(a => {
       if (a.getAttribute('href') === '#' + current) a.setAttribute('aria-current','true');
       else a.removeAttribute('aria-current');
     });
+    // before the first section (still in the hero), the breadcrumb previews where scrolling leads next
+    breadcrumbCurrent.textContent = (currentLink || spyLinks[0]).textContent;
   }
   window.addEventListener('scroll', updateSpy, {passive:true});
   updateSpy();
@@ -1672,4 +1728,3 @@
 </body>
 </html>
  
-
